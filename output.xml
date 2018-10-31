@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181029 08:35:29.890">
+<suite id="s1" name="Login" source="C:\Python\PSelenium\Fractal\TestCases\Login.robot">
+<test id="s1-t1" name="TC_01_Wrong Username And Password Are Entered">
+<kw name="Open Browser Test Setup" library="Common_Keywords" type="setup">
+<arguments>
+<arg>https://my.askfractal.com/Login</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:30.155" level="INFO">Opening browser 'Chrome' to base url 'https://my.askfractal.com/Login'.</msg>
+<status status="PASS" starttime="20181029 08:35:30.155" endtime="20181029 08:35:35.712"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20181029 08:35:35.712" endtime="20181029 08:35:36.922"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:30.155" endtime="20181029 08:35:36.922"></status>
+</kw>
+<kw name="Enter Email" library="Common_Login">
+<arguments>
+<arg>user1@gmail.com</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id:email</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:36.924" endtime="20181029 08:35:36.946"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:36.948" level="INFO">Typing text 'user1@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20181029 08:35:36.946" endtime="20181029 08:35:37.241"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:36.923" endtime="20181029 08:35:37.241"></status>
+</kw>
+<kw name="Enter Password" library="Common_Login">
+<arguments>
+<arg>1234</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id:password</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:37.242" endtime="20181029 08:35:37.261"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:37.262" level="INFO">Typing text '1234' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20181029 08:35:37.262" endtime="20181029 08:35:37.415"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:37.241" endtime="20181029 08:35:37.416"></status>
+</kw>
+<kw name="Login" library="Common_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181029 08:35:37.417" level="INFO">Clicking element 'xpath://*[@type='submit']'.</msg>
+<status status="PASS" starttime="20181029 08:35:37.416" endtime="20181029 08:35:37.552"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:37.416" endtime="20181029 08:35:37.552"></status>
+</kw>
+<kw name="Check That Login Fails" library="Common_Login">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:37.553" endtime="20181029 08:35:37.556"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>We couldn't find an account with that username and password</arg>
+</arguments>
+<msg timestamp="20181029 08:35:37.647" level="INFO">Current page contains text 'We couldn't find an account with that username and password'.</msg>
+<status status="PASS" starttime="20181029 08:35:37.556" endtime="20181029 08:35:37.647"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Login Fail Test</arg>
+</arguments>
+<msg timestamp="20181029 08:35:37.647" level="INFO">Login Fail Test</msg>
+<status status="PASS" starttime="20181029 08:35:37.647" endtime="20181029 08:35:37.647"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:37.552" endtime="20181029 08:35:37.647"></status>
+</kw>
+<kw name="Close Browser Window" library="Common_Keywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181029 08:35:37.648" endtime="20181029 08:35:39.869"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:37.648" endtime="20181029 08:35:39.869"></status>
+</kw>
+<doc>Test that users cannot login with wrong username and password-Wrong_Credentials</doc>
+<tags>
+<tag>Enter Login Page</tag>
+</tags>
+<status status="PASS" starttime="20181029 08:35:30.152" endtime="20181029 08:35:39.872" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC_02_Empty Username Is Entered">
+<kw name="Open Browser Test Setup" library="Common_Keywords" type="setup">
+<arguments>
+<arg>https://my.askfractal.com/Login</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:39.880" level="INFO">Opening browser 'Chrome' to base url 'https://my.askfractal.com/Login'.</msg>
+<status status="PASS" starttime="20181029 08:35:39.880" endtime="20181029 08:35:44.887"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20181029 08:35:44.888" endtime="20181029 08:35:46.058"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:39.880" endtime="20181029 08:35:46.058"></status>
+</kw>
+<kw name="Enter Email" library="Common_Login">
+<arguments>
+<arg>${empty}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id:email</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:46.060" endtime="20181029 08:35:46.083"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:46.084" level="INFO">Typing text '' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20181029 08:35:46.083" endtime="20181029 08:35:46.177"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:46.059" endtime="20181029 08:35:46.177"></status>
+</kw>
+<kw name="Enter Password" library="Common_Login">
+<arguments>
+<arg>1234</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id:password</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:46.177" endtime="20181029 08:35:46.193"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:46.194" level="INFO">Typing text '1234' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20181029 08:35:46.193" endtime="20181029 08:35:46.360"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:46.177" endtime="20181029 08:35:46.361"></status>
+</kw>
+<kw name="Login" library="Common_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181029 08:35:46.364" level="INFO">Clicking element 'xpath://*[@type='submit']'.</msg>
+<status status="PASS" starttime="20181029 08:35:46.364" endtime="20181029 08:35:46.461"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:46.363" endtime="20181029 08:35:46.462"></status>
+</kw>
+<kw name="Check The Required Fields" library="Common_Login">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:46.463" endtime="20181029 08:35:46.464"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Required field</arg>
+</arguments>
+<msg timestamp="20181029 08:35:46.483" level="INFO">Current page contains text 'Required field'.</msg>
+<status status="PASS" starttime="20181029 08:35:46.465" endtime="20181029 08:35:46.484"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Login Fail Test</arg>
+</arguments>
+<msg timestamp="20181029 08:35:46.484" level="INFO">Login Fail Test</msg>
+<status status="PASS" starttime="20181029 08:35:46.484" endtime="20181029 08:35:46.484"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:46.463" endtime="20181029 08:35:46.484"></status>
+</kw>
+<kw name="Close Browser Window" library="Common_Keywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181029 08:35:46.485" endtime="20181029 08:35:48.700"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:46.485" endtime="20181029 08:35:48.700"></status>
+</kw>
+<doc>Test that users cannot login with empty email</doc>
+<tags>
+<tag>Enter Login Page</tag>
+</tags>
+<status status="PASS" starttime="20181029 08:35:39.876" endtime="20181029 08:35:48.702" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC_03_Empty Password Is Entered">
+<kw name="Open Browser Test Setup" library="Common_Keywords" type="setup">
+<arguments>
+<arg>https://my.askfractal.com/Login</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:48.711" level="INFO">Opening browser 'Chrome' to base url 'https://my.askfractal.com/Login'.</msg>
+<status status="PASS" starttime="20181029 08:35:48.710" endtime="20181029 08:35:53.448"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20181029 08:35:53.448" endtime="20181029 08:35:54.594"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:48.709" endtime="20181029 08:35:54.594"></status>
+</kw>
+<kw name="Enter Email" library="Common_Login">
+<arguments>
+<arg>user1@gmail.com</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id:email</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:54.595" endtime="20181029 08:35:54.621"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:54.622" level="INFO">Typing text 'user1@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20181029 08:35:54.622" endtime="20181029 08:35:54.901"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:54.595" endtime="20181029 08:35:54.902"></status>
+</kw>
+<kw name="Enter Password" library="Common_Login">
+<arguments>
+<arg>${empty}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id:password</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:54.903" endtime="20181029 08:35:54.925"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20181029 08:35:54.926" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20181029 08:35:54.926" endtime="20181029 08:35:55.025"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:54.902" endtime="20181029 08:35:55.025"></status>
+</kw>
+<kw name="Login" library="Common_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181029 08:35:55.026" level="INFO">Clicking element 'xpath://*[@type='submit']'.</msg>
+<status status="PASS" starttime="20181029 08:35:55.026" endtime="20181029 08:35:55.149"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:55.025" endtime="20181029 08:35:55.150"></status>
+</kw>
+<kw name="Check The Required Fields" library="Common_Login">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20181029 08:35:55.151" endtime="20181029 08:35:55.153"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Required field</arg>
+</arguments>
+<msg timestamp="20181029 08:35:55.181" level="INFO">Current page contains text 'Required field'.</msg>
+<status status="PASS" starttime="20181029 08:35:55.153" endtime="20181029 08:35:55.181"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Login Fail Test</arg>
+</arguments>
+<msg timestamp="20181029 08:35:55.181" level="INFO">Login Fail Test</msg>
+<status status="PASS" starttime="20181029 08:35:55.181" endtime="20181029 08:35:55.181"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:55.151" endtime="20181029 08:35:55.181"></status>
+</kw>
+<kw name="Close Browser Window" library="Common_Keywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181029 08:35:55.183" endtime="20181029 08:35:57.405"></status>
+</kw>
+<status status="PASS" starttime="20181029 08:35:55.182" endtime="20181029 08:35:57.406"></status>
+</kw>
+<doc>Test that users cannot login with empty password</doc>
+<tags>
+<tag>Enter Login Page</tag>
+</tags>
+<status status="PASS" starttime="20181029 08:35:48.707" endtime="20181029 08:35:57.407" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20181029 08:35:29.892" endtime="20181029 08:35:57.413"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0">Enter Login Page</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
